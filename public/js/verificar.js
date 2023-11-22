@@ -12,7 +12,7 @@ function submitForm() {
   const rut = document.getElementById('rut').value;
 
   // Make AJAX request using Fetch API
-  fetch(`http://localhost:4500/identidad/verificar/${rut}`, {
+  fetch(`http://34.94.180.16/identidad/verificar/${rut}`, {
     method: 'GET',
   })
   .then(response => response.text())

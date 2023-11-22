@@ -57,8 +57,8 @@ export class UsersController {
     return await this.usersService.verifyRut(rut);
   }
 
-  @Get('cargarExcel')
-  async cargarExcel() {
-    return await this.usersService.cargarExcel();
-  }
+  // @Get('cargarExcel')
+  // async cargarExcel() {
+  //   return await this.usersService.cargarExcel();
+  // }
 }

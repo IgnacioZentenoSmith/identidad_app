@@ -18,7 +18,7 @@ function submitForm() {
   }
 
   // Make AJAX request using Fetch API
-  fetch(`http://localhost:4500/identidad/registrar`, {
+  fetch(`http://34.94.180.16/identidad/registrar`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(formData)
