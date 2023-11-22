@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  identidad-app:
+    build: .
+    ports:
+      - "4500:4500"
+    networks:
+      - mmlv-network
+    restart: always
+    environment:
+      - PG_HOST=postgres
+      - PG_PORT=5432
+      - PG_USERNAME=root
+      - PG_PASSWORD=root
+      - PG_DATABASE=identidad_app
+
+networks:
+  mmlv-network:
+    external: true

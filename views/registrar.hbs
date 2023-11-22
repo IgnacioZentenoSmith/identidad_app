@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>Registro de usuarios</title>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+          <form class="card shadow">
+            <img src="/images/mmlv-logo-blanco.png" class="card-img-top img-fluid bg-success" alt="...">
+            <div class="px-3 mb-1 mt-2">
+              <label for="nombre" class="form-label">*Nombre:</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Juan" required>
+            </div>
+
+            <div class="px-3 mb-1">
+              <label for="apellido" class="form-label">*Apellido:</label>
+              <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Perez" required>
+            </div>
+
+            <div class="px-3 mb-1">
+              <label for="rut" class="form-label">*RUT (sin puntos ni guiones):</label>
+              <input type="text" class="form-control" id="rut" name="rut" placeholder="12345670" required>
+            </div>
+
+            <div class="px-3 mb-1">
+              <label for="celular" class="form-label">*Celular:</label>
+              <input type="text" class="form-control" id="celular" name="celular" placeholder="56912345678" required>
+            </div>
+
+            <div class="px-3 mb-1">
+              <label for="email" class="form-label">*Email:</label>
+              <input type="text" class="form-control" id="email" name="email" placeholder="juan.perez@ejemplo.com" required>
+            </div>
+
+            <div class="px-3 mb-1">
+              <label for="patente_particular_1" class="form-label">Patente Particular 1:</label>
+              <input type="text" class="form-control" id="patente_particular_1" name="patente_particular_1" placeholder="">
+            </div>
+
+            <div class="px-3 mb-1">
+              <label for="patente_particular_2" class="form-label">Patente Particular 2:</label>
+              <input type="text" class="form-control" id="patente_particular_2" name="patente_particular_2" placeholder="">
+            </div>
+
+            <div class="px-3 mb-1">
+              <label for="sector_trabajo" class="form-label" required>*Sector de Trabajo:</label>
+              <select class="form-select" id="sector_trabajo" name="sector_trabajo">
+                {{#each sector}}
+                  <option value="{{this}}">{{this}}</option>
+                {{/each}}
+              </select>
+            </div>
+
+            <div class="p-2 d-flex justify-content-center">
+              <button type="submit" class="btn btn-success m-1" id="registrarButton" onclick="submitForm()">Registrar</button>
+              <a href="/identidad/verificar" class="btn btn-secondary m-1">Verificar Usuario</a>
+            </div>
+          </form>
+
+          <!-- Bootstrap 5 Alert for Success -->
+          <div id="successAlert" class="alert alert-success p-2 mt-3 d-none position-fixed top-75 start-50 translate-middle-x" role="alert">
+            Usuario registrado con éxito
+          </div>
+
+          <!-- Bootstrap 5 Alert for Error -->
+          <div id="errorAlert" class="alert alert-danger p-2 mt-3 d-none position-fixed top-75 start-50 translate-middle-x" role="alert">
+            Error al registrar usuario
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Include your separate JavaScript file -->
+  <script src="/js/registrar.js"></script>
+</body>
+</html>

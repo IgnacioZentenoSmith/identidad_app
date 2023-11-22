@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>Verificación de usuarios</title>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+          <form class="card shadow">
+            <img src="/images/mmlv-logo-blanco.png" class="card-img-top img-fluid bg-success" alt="...">
+            <div class="px-3 mb-1 mt-2">
+              <label for="rut" class="form-label">Ingrese RUT (sin puntos ni guiones):</label>
+              <input type="text" class="form-control" id="rut" name="rut" placeholder="12345670">
+            </div>
+
+            <div class="p-2 d-flex justify-content-center">
+              <button type="submit" class="btn btn-success m-1" id="buscarButton" onclick="submitForm()">Verificar</button>
+              <button type="button" class="btn btn-info m-1" id="limpiarButton" onclick="cleanForm()">Limpiar</button>
+              <a href="/identidad/registrar" class="btn btn-secondary m-1">Nuevo Usuario</a>
+            </div>
+          </form>
+          <!-- Bootstrap 5 Alert for Success -->
+            <div id="successAlert" class="alert alert-success p-2 mt-3 d-none position-fixed top-75 start-50 translate-middle-x" role="alert">
+              Usuario existe
+            </div>
+
+            <!-- Bootstrap 5 Alert for Error -->
+            <div id="errorAlert" class="alert alert-danger p-2 mt-3 d-none position-fixed top-75 start-50 translate-middle-x" role="alert">
+              Usuario no existe
+            </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Include your separate JavaScript file -->
+  <script src="/js/verificar.js"></script>
+</body>
+</html>
